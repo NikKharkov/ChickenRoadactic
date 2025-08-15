@@ -12,6 +12,9 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -19,6 +22,7 @@ import com.chickengal.run.domain.shop.ShopTab
 import com.chickengal.run.presentation.screens.shop.components.ModifiersShopContent
 import com.chickengal.run.presentation.screens.shop.components.ShopTabSwitcher
 import com.chickengal.run.presentation.screens.shop.components.EggPacksShopContent
+import com.chickengal.run.presentation.screens.shop.components.NotEnoughEggsDialog
 import com.chickengal.run.presentation.shared.TopBar
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -31,6 +35,8 @@ fun ShopScreen(
     val eggPacks by shopViewModel.currencyPacks.collectAsState()
     val currentTab by shopViewModel.currentTab.collectAsState()
     val modifiers = shopViewModel.modifierItems
+
+    var showNotEnoughEggsDialog by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -57,9 +63,12 @@ fun ShopScreen(
             ShopTab.MODIFIERS -> {
                 ModifiersShopContent(
                     modifiers = modifiers,
-                    eggs = eggs,
                     purchaseModifier = { type, price ->
-                        shopViewModel.purchaseModifier(type, price)
+                        val success = shopViewModel.purchaseModifier(type, price)
+                        if (!success) {
+                            showNotEnoughEggsDialog = true
+                        }
+                        success
                     }
                 )
             }
@@ -73,5 +82,11 @@ fun ShopScreen(
                 )
             }
         }
+    }
+
+    if (showNotEnoughEggsDialog) {
+        NotEnoughEggsDialog(
+            onDismiss = { showNotEnoughEggsDialog = false }
+        )
     }
 }

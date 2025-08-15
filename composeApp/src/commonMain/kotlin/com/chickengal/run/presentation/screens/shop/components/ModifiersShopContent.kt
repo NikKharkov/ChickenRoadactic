@@ -13,7 +13,6 @@ import com.chickengal.run.domain.shop.ModifierShopItem
 @Composable
 fun ModifiersShopContent(
     modifiers: List<ModifierShopItem>,
-    eggs: Int,
     purchaseModifier: (ModifierType, Int) -> Boolean
 ) {
     Column (
@@ -24,7 +23,6 @@ fun ModifiersShopContent(
         modifiers.forEach { item ->
             ModifierCard(
                 modifierType = item.type,
-                canAfford = eggs >= item.price,
                 onPurchase = {
                     purchaseModifier(item.type, item.price)
                 }

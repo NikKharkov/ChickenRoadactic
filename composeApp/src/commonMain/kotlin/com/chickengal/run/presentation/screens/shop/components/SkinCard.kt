@@ -37,8 +37,6 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun SkinCard(
     skinType: SkinType,
-    price: Int,
-    regularCoins: Int,
     isPurchased: Boolean,
     isApplied: Boolean,
     onPurchase: () -> Boolean,
@@ -99,15 +97,12 @@ fun SkinCard(
                             .offset(y = -buttonBottomOffset)
                     )
                 } else {
-                    val canAfford = regularCoins >= price
-
                     InteractiveButton(
                         image = painterResource(Res.drawable.btn_buy),
                         onClick = {
                             onPurchase()
                             VibrationManager.vibrate(100)
                         },
-                        enabled = canAfford,
                         modifier = Modifier
                             .size(width = buttonWidth, height = buttonHeight)
                             .align(Alignment.BottomCenter)

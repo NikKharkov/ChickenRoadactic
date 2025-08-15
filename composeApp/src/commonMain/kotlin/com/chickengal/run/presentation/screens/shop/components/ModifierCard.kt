@@ -26,7 +26,6 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun ModifierCard(
     modifierType: ModifierType,
-    canAfford: Boolean,
     onPurchase: () -> Boolean
 ) {
     val modifierImage = when (modifierType) {
@@ -71,7 +70,6 @@ fun ModifierCard(
                     onClick = {
                         onPurchase()
                     },
-                    enabled = canAfford,
                     modifier = Modifier
                         .width(buttonWidth)
                         .height(buttonHeight)
