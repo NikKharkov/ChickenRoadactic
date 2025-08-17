@@ -41,19 +41,25 @@
 
 ## Screenshots 📱
 
-| Main Menu                     | Gameplay                          | Cosmic Skins                    |
-|-------------------------------|-----------------------------------|---------------------------------|
-| ![Menu](screenshots/menu.png) | ![Gameplay](screenshots/game.png) | ![Skins](screenshots/skins.png) |
+| Main Menu | Gameplay |
+|-----------|----------|
+| ![Menu](screenshots/menu.png) | ![Gameplay](screenshots/game.png) |
 
-| Space Shop                    | Leaderboard                                 | Settings                              |
-|-------------------------------|---------------------------------------------|---------------------------------------|
-| ![Shop](screenshots/shop.png) | ![Leaderboard](screenshots/leaderboard.png) | ![Settings](screenshots/settings.png) |
+| Cosmic Skins | Space Shop |
+|------------- |------------|
+| ![Skins](screenshots/skins.png) | ![Shop](screenshots/shop.png) |
 
+| Leaderboard | Settings |
+|-------------|----------|
+| ![Leaderboard](screenshots/leaderboard.png) | ![Settings](screenshots/settings.png) |
+
+## Tech Stack 🛠️
 
 ### Core Technologies
 - **Language**: Kotlin
 - **UI Framework**: Compose Multiplatform
 - **Native in-app purchases**
+
 ---
 
 *Run through the cosmos and become the ultimate space chicken! 🌟🐔*
