@@ -41,16 +41,16 @@
 
 ## Screenshots 📱
 
-| Main Menu | Gameplay |
-|-----------|----------|
+| Main Menu                     | Gameplay                          |
+|-------------------------------|-----------------------------------|
 | ![Menu](screenshots/menu.png) | ![Gameplay](screenshots/game.png) |
 
-| Cosmic Skins | Space Shop |
-|------------- |------------|
+| Cosmic Skins                    | Space Shop                    |
+|---------------------------------|-------------------------------|
 | ![Skins](screenshots/skins.png) | ![Shop](screenshots/shop.png) |
 
-| Leaderboard | Settings |
-|-------------|----------|
+| Leaderboard                                 | Settings                              |
+|---------------------------------------------|---------------------------------------|
 | ![Leaderboard](screenshots/leaderboard.png) | ![Settings](screenshots/settings.png) |
 
 ## Tech Stack 🛠️
